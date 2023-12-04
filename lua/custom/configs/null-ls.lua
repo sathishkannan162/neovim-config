@@ -7,7 +7,17 @@ local sources = {
   -- webdev stuff -- deno fmt not reading prettier local config
   -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with {
-    filetypes = { "html", "markdown", "css", "typescript", "javascript", "typescriptreact", "javascriptreact", "astro", "json" },
+    filetypes = {
+      "html",
+      "markdown",
+      "css",
+      "typescript",
+      "javascript",
+      "typescriptreact",
+      "javascriptreact",
+      "astro",
+      "json",
+    },
   }, -- so prettier works only on these filetypes
   -- b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "typescript", "javascript" } }, -- so prettier works only on these filetypes
   b.formatting.eslint.with {
