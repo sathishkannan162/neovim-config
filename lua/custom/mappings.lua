@@ -9,6 +9,9 @@ M.general = {
   v = {
     [">"] = { ">gv", "indent" },
   },
+  c = {
+    ["jk"] = { "<ESC>", "Exit command mode to normal mode" },
+  },
 }
 
 M.nvimtree = {

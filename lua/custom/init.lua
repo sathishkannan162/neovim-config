@@ -27,10 +27,5 @@ vim.g.astro_stylus = "enable"
 -- vim.keymap.set("n", "<C-m>", "<Plug>(VM-Find-Under)")
 -- vim.keymap.set("x", "<C-m>", "<Plug>(VM-Find-Subword-Under)")
 
--- Execute a command when exiting Neovim
-vim.api.nvim_exec([[
-  augroup ExitNeovimAutocmd
-    autocmd!
-    autocmd VimLeave * lua print("Goodbye! This command runs on Neovim exit.")
-  augroup END
-]], false)
+-- autocmd
+require('./custom/autocmds').setup();

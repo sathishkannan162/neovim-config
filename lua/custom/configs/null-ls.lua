@@ -29,6 +29,7 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+  b.formatting.shfmt,
 }
 
 local on_attach = function(client, bufnr)

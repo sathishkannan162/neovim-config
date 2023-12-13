@@ -518,25 +518,35 @@ local plugins = {
       }
     end,
   },
+  -- leap.nvim
+  {
+    "ggandor/leap.nvim",
+    keys = {
+      { "s", mode = "n", desc = "search text" },
+    },
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
   {
     "kawre/leetcode.nvim",
     -- cmd="LeetCode",
-    lazy=false,
+    lazy = false,
     build = ":TSUpdate html",
     dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim", -- required by telescope
-        "MunifTanjim/nui.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
 
-        -- optional
-        "nvim-treesitter/nvim-treesitter",
-        "rcarriga/nvim-notify",
-        "nvim-tree/nvim-web-devicons",
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
     },
     opts = {
-        -- configuration goes here
+      -- configuration goes here
     },
-}
+  },
 
   -- {
   --   "antonk52/bad-practices.nvim",
