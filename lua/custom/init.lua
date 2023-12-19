@@ -28,4 +28,13 @@ vim.g.astro_stylus = "enable"
 -- vim.keymap.set("x", "<C-m>", "<Plug>(VM-Find-Subword-Under)")
 
 -- autocmd
-require('./custom/autocmds').setup();
+require("./custom/autocmds").setup()
+
+-- markdown mdx file setup
+vim.api.nvim_exec(
+  [[
+  autocmd BufRead,BufNewFile *.mdx set filetype=markdown.mdx
+]],
+  false
+)
+
