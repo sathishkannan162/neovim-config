@@ -76,6 +76,12 @@ M["vim-visual-multi"] = {
   },
 }
 
+M.leap = {
+  n = {
+    ["gs"] = { "<Plug>(leap-from-window)", "Search in other window" },
+  },
+}
+
 -- M.dap = {
 --   n = {
 --     ["<leader>dt"] = { "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>" },
