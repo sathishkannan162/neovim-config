@@ -38,3 +38,6 @@ vim.api.nvim_exec(
   false
 )
 
+-- vscode snippets path
+
+-- vim.g.vscode_snippets_path = "/Users/sathish/Library/Application Support/Code/User/snippets"
