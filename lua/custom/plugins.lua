@@ -547,6 +547,42 @@ local plugins = {
       -- configuration goes here
     },
   },
+ -- NOTE: Unable to use obsidian.nvim as google drive imposes permission restrictions on cli tools. 
+  -- {
+  --   "epwalsh/obsidian.nvim",
+  --   version = "*",
+  --   lazy = false,
+  --   -- ft = "markdown",
+  --   -- event = {
+  --   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+  --   --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+  --   --   "BufReadPre path/to/my-vault/**.md",
+  --   --   "BufNewFile path/to/my-vault/**.md",
+  --   -- },
+  --   dependencies = {
+  --     -- Required.
+  --     "nvim-lua/plenary.nvim",
+  --
+  --     -- see below for full list of optional dependencies 👇
+  --   },
+  --   opts = {
+  --     workspaces = {
+  --       {
+  --         name = "personal",
+  --         path = "~/Google Drive/My Drive/creative-learner-backu",
+  --       },
+  --     },
+  --
+  --     -- see below for full list of options 👇
+  --   },
+  -- },
+  -- {
+  --   "echasnovski/mini.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("mini.animate").setup()
+  --   end,
+  -- },
 
   -- {
   --   "antonk52/bad-practices.nvim",
