@@ -110,6 +110,7 @@ local options = {
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
+    { name = "lab.quick_data", keyword_length = 4 },
   },
 }
 

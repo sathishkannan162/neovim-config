@@ -39,5 +39,10 @@ vim.api.nvim_exec(
 )
 
 -- vscode snippets path
+-- vim.g.vscode_snippets_path = "~/Library/Application Support/Code/User/snippets/typescript.json"
+vim.g.vscode_snippets_path = "~/Library/Application Support/Code/User/snippets"
 
--- vim.g.vscode_snippets_path = "/Users/sathish/Library/Application Support/Code/User/snippets"
+-- local opts = {
+--   paths = "~/Library/Application Support/Code/User/snippets/typescript.json",
+-- }
+-- require("luasnip.loaders.from_vscode}").lazy_load(opts)
