@@ -213,6 +213,7 @@ local plugins = {
   },
   {
     "windwp/nvim-ts-autotag",
+    lazy = false,
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -547,7 +548,62 @@ local plugins = {
       -- configuration goes here
     },
   },
- -- NOTE: Unable to use obsidian.nvim as google drive imposes permission restrictions on cli tools. 
+  -- {
+  --   "mrjones2014/legendary.nvim",
+  --   -- since legendary.nvim handles all your keymaps/commands,
+  --   -- its recommended to load legendary.nvim before other plugins
+  --   priority = 10000,
+  --   lazy = false,
+  --   -- sqlite is only needed if you want to use frecency sorting
+  --   -- dependencies = { 'kkharji/sqlite.lua' }
+  -- },
+  -- {
+  --   "JoosepAlviste/nvim-ts-context-commentstring",
+  -- lazy=false,
+  -- }
+  -- {
+  --   "metakirby5/codi.vim",
+  --   lazy=false,
+  -- }
+  -- {
+  --   "0x100101/lab.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     quick_data = {
+  --       enabled = true,
+  --     },
+  --     code_runner = {
+  --       enabled = true,
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "gaelph/logsitter",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   config = function()
+  --     vim.api.nvim_create_augroup("LogSitter", { clear = true })
+  --     vim.api.nvim_create_autocmd("FileType", {
+  --       group = "Logsitter",
+  --       pattern = "javascript,go,lua",
+  --       callback = function()
+  --         vim.keymap.set("n", "<localleader>lg", function()
+  --           require("logsitter").log()
+  --         end)
+  --       end,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --    "miikanissi/modus-themes.nvim",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd [[colorscheme modus]] -- modus_operandi, modus_vivendi
+  --   end,
+  -- },
+  -- NOTE: Unable to use obsidian.nvim as google drive imposes permission restrictions on cli tools.
   -- {
   --   "epwalsh/obsidian.nvim",
   --   version = "*",
