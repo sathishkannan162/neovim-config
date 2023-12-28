@@ -548,6 +548,10 @@ local plugins = {
       -- configuration goes here
     },
   },
+  {
+    "LintaoAmons/scratch.nvim",
+    event = "VeryLazy",
+  },
   -- {
   --   "mrjones2014/legendary.nvim",
   --   -- since legendary.nvim handles all your keymaps/commands,
