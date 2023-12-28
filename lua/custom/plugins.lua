@@ -87,7 +87,13 @@ local plugins = {
     lazy = false,
     -- event = "InsertEnter",
     config = function()
-      require("auto-save").setup()
+      require("auto-save").setup({
+        execution_message = {
+          message = function()
+           return ''
+          end
+        }
+      })
     end,
   },
   {
@@ -552,11 +558,55 @@ local plugins = {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
   },
+  -- {
+  --   "echasnovski/mini.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("mini.animate").setup()
+  --   end,
+  -- },
   {
-    "echasnovski/mini.nvim",
+    "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
     config = function()
-      require("mini.animate").setup()
+      require("chatgpt").setup {
+        api_key_cmd = "pass show openai/chatgpt_nvim_api_key",
+      }
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    -- lazy=false,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    config = function()
+      require("noice").setup {
+        lsp = {
+          -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
+          },
+        },
+        -- you can enable a preset for easier configuration
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+        },
+      }
     end,
   },
   -- {
@@ -653,36 +703,6 @@ local plugins = {
   --       most_splits = 3, -- how many splits are considered a good practice(default: 3)
   --       most_tabs = 3, -- how many tabs are considered a good practice(default: 3)
   --       max_hjkl = 10, -- how many times you can spam hjkl keys in a row(default: 10)
-  --     }
-  --   end,
-  -- },
-
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VeryLazy",
-  --   -- lazy=false,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  --   config = function()
-  --     require("noice").setup {
-  --       lsp = {
-  --         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-  --         override = {
-  --           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-  --           ["vim.lsp.util.stylize_markdown"] = true,
-  --           ["cmp.entry.get_documentation"] = true,
-  --         },
-  --       },
-  --       -- you can enable a preset for easier configuration
-  --       presets = {
-  --         bottom_search = true, -- use a classic bottom cmdline for search
-  --         command_palette = true, -- position the cmdline and popupmenu together
-  --         long_message_to_split = true, -- long messages will be sent to a split
-  --         inc_rename = false, -- enables an input dialog for inc-rename.nvim
-  --         lsp_doc_border = false, -- add a border to hover docs and signature help
-  --       },
   --     }
   --   end,
   -- },
