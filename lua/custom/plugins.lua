@@ -552,7 +552,15 @@ local plugins = {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
   },
+  {
+    "echasnovski/mini.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("mini.animate").setup()
+    end,
+  },
   -- {
+  --
   --   "mrjones2014/legendary.nvim",
   --   -- since legendary.nvim handles all your keymaps/commands,
   --   -- its recommended to load legendary.nvim before other plugins
@@ -635,13 +643,6 @@ local plugins = {
   --
   --     -- see below for full list of options 👇
   --   },
-  -- },
-  -- {
-  --   "echasnovski/mini.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("mini.animate").setup()
-  --   end,
   -- },
 
   -- {
