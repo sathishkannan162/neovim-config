@@ -46,7 +46,6 @@ M.luasnip = function(opts)
   require("luasnip.loaders.from_lua").lazy_load { paths = vim.g.lua_snippets_path or "" }
 
   local snippets = require "./custom/lua-snippets/typescript-snippets"
-  print "typescript snippets"
   -- add custom snippets
   require("luasnip").add_snippets("typescript", snippets.typescript)
   require("luasnip").add_snippets("javascript", snippets.typescript)
