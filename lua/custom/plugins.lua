@@ -580,6 +580,44 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = false,
+    -- ft = "markdown",
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    --   "BufReadPre path/to/my-vault/**.md",
+    --   "BufNewFile path/to/my-vault/**.md",
+    -- },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/Desktop/obsidian_vaults/creative-learner/",
+        },
+      },
+      daily_notes = {
+        -- Optional, if you keep daily notes in a separate directory.
+        folder = "journals",
+        -- Optional, if you want to change the date format for the ID of daily notes.
+        date_format = "%d-%m-%Y",
+        -- Optional, if you want to change the date format of the default alias of daily notes.
+        alias_format = "%d-%m-%Y",
+        -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+        template = nil,
+      },
+
+      -- see below for full list of options 👇
+    },
+  },
 
   -- {
   --   "folke/noice.nvim",
@@ -667,34 +705,6 @@ local plugins = {
   --   end,
   -- },
   -- NOTE: Unable to use obsidian.nvim as google drive imposes permission restrictions on cli tools.
-  -- {
-  --   "epwalsh/obsidian.nvim",
-  --   version = "*",
-  --   lazy = false,
-  --   -- ft = "markdown",
-  --   -- event = {
-  --   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-  --   --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-  --   --   "BufReadPre path/to/my-vault/**.md",
-  --   --   "BufNewFile path/to/my-vault/**.md",
-  --   -- },
-  --   dependencies = {
-  --     -- Required.
-  --     "nvim-lua/plenary.nvim",
-  --
-  --     -- see below for full list of optional dependencies 👇
-  --   },
-  --   opts = {
-  --     workspaces = {
-  --       {
-  --         name = "personal",
-  --         path = "~/Google Drive/My Drive/creative-learner-backu",
-  --       },
-  --     },
-  --
-  --     -- see below for full list of options 👇
-  --   },
-  -- },
 
   -- {
   --   "antonk52/bad-practices.nvim",
