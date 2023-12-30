@@ -608,6 +608,7 @@ local plugins = {
         alias_format = "%d-%m-%Y",
         template = nil,
       },
+      disable_frontmatter = true,
       note_id_func = function(title)
         return title
       end,
