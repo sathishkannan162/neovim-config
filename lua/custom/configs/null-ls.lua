@@ -6,10 +6,10 @@ local sources = {
 
   -- webdev stuff -- deno fmt not reading prettier local config
   -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with {
+  b.formatting.prettierd.with {
     filetypes = {
       "html",
-      "markdown",
+      -- "markdown",
       "css",
       "typescript",
       "javascript",
@@ -30,6 +30,7 @@ local sources = {
   -- cpp
   b.formatting.clang_format,
   b.formatting.shfmt,
+  b.formatting.rustfmt,
 }
 
 local on_attach = function(client, bufnr)

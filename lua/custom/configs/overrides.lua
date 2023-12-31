@@ -35,8 +35,17 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "tailwindcss-language-server",
+    "eslint-lsp",
+    "eslint_d",
+    "node-debug2-adapter",
+    "astro-language-server ",
     -- "deno" -- not reading local prettier config,
     "prettier",
+    "prettierd",
+
+    -- rust
+    "rust-analyzer",
 
     -- c/cpp stuff
     "clangd",

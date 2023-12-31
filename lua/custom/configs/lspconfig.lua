@@ -7,6 +7,7 @@ capabilities.textDocument.foldingRange = {
 }
 
 local lspconfig = require "lspconfig"
+local util = require "lspconfig.util"
 
 -- if you just want default config for the servers then put them in a table
 local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "eslint", "astro", "bashls" }
@@ -17,6 +18,21 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- can cause conflict with rust tools.
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "rust" },
+--   root_dir = util.root_pattern "Cargo.toml",
+--   settings = {
+--     ["rust_analyzer"] = {
+--       cargo = {
+--         all_features = true,
+--       },
+--     },
+--   },
+-- }
 
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities.textDocument.foldingRange = {
@@ -38,5 +54,3 @@ end
 lspconfig.tailwindcss.setup {}
 lspconfig.astro.setup {}
 lspconfig.bashls.setup { filetypes = { "sh" } }
-
-
