@@ -50,6 +50,9 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- text
+    "grammarly-languageserver",
   },
 }
 
