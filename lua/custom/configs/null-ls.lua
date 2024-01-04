@@ -20,7 +20,7 @@ local sources = {
     },
   }, -- so prettier works only on these filetypes
   -- b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "typescript", "javascript" } }, -- so prettier works only on these filetypes
-  b.formatting.eslint.with {
+  b.formatting.eslint_d.with {
     filetypes = { "html", "typescript", "javascript", "typescriptreact", "javascriptreact", "json" },
   },
 
