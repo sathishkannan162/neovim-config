@@ -31,6 +31,10 @@ local sources = {
   b.formatting.clang_format,
   b.formatting.shfmt,
   b.formatting.rustfmt,
+  b.formatting.black,
+
+  -- b.diagnostics.mypy,
+  b.diagnostics.ruff,
 }
 
 local on_attach = function(client, bufnr)

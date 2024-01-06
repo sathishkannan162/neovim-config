@@ -376,8 +376,8 @@ local plugins = {
     { "<leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>dO", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>do", function() require("dap").step_over() end, desc = "Step Over" },
     { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
@@ -711,6 +711,26 @@ local plugins = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
+    },
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
+    end,
+    keys = {
+      {
+        "<leader>dy",
+        function()
+          require("dap-python").test_method()
+        end,
+      },
     },
   },
   -- {

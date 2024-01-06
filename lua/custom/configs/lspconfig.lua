@@ -10,7 +10,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "eslint", "astro", "bashls"  }
+local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "eslint", "astro", "bashls", "pyright"  }
 -- grammarly language server gives too much errors when writing notes.
 
 for _, lsp in ipairs(servers) do

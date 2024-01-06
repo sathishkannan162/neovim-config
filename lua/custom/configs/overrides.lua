@@ -52,7 +52,15 @@ M.mason = {
     "clang-format",
 
     -- text
-    "grammarly-languageserver",
+    -- "grammarly-languageserver",
+  
+    -- python 
+    "pyright", -- lsp
+    "black", -- formatter
+    "mypy", -- static type checking linters
+    "ruff", -- static typeschecking linters
+    "debugpy" -- debugger 
+    
   },
 }
 
