@@ -10,7 +10,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss", "eslint", "astro", "bashls", "pyright"  }
+local servers = { "html", "cssls", "tsserver", "clangd", "eslint", "astro", "bashls", "pyright", "marksman" }
 -- grammarly language server gives too much errors when writing notes.
 
 for _, lsp in ipairs(servers) do
@@ -52,6 +52,10 @@ end
 --
 -- lspconfig.pyright.setup { blabla}
 --
-lspconfig.tailwindcss.setup {}
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "css", "typescriptreact", "javascriptreact" },
+}
 lspconfig.astro.setup {}
 lspconfig.bashls.setup { filetypes = { "sh" } }
