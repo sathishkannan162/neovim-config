@@ -280,12 +280,12 @@ local plugins = {
     "sindrets/diffview.nvim",
     lazy = false,
   },
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {},
-  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   lazy = false,
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {},
+  -- },
   {
     "mfussenegger/nvim-dap",
     dependencies = {
