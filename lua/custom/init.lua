@@ -46,3 +46,6 @@ vim.g.vscode_snippets_path = "~/Library/Application Support/Code/User/snippets"
 --   paths = "~/Library/Application Support/Code/User/snippets/typescript.json",
 -- }
 -- require("luasnip.loaders.from_vscode}").lazy_load(opts)
+
+-- set conceal level to 2 to support markdown rendering for bullet points and checkboxes, with obsidian.nvim plugin.
+vim.o.conceallevel=2
