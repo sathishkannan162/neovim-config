@@ -12,7 +12,8 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
-    "python"
+    "python",
+    "go"
   },
   autotag = {
     enable = true,
@@ -64,6 +65,10 @@ M.mason = {
 
     -- markdown
     "marksman",
+
+    -- go 
+    "gopls",
+    "delve" -- debgger
   },
 }
 

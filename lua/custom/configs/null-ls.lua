@@ -35,6 +35,15 @@ local sources = {
 
   -- b.diagnostics.mypy,
   b.diagnostics.ruff,
+
+  -- go 
+  b.formatting.gofmt,
+  -- b.formatting.gofumpt, -- stricter go format
+  b.formatting.goimports,
+  -- b.formatting.goimports_reviser, -- deterministic ordering of imports
+  b.formatting.golines,
+  -- shortens long lines of code
+  
 }
 
 local on_attach = function(client, bufnr)

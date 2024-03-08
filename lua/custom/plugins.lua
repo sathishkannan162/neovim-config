@@ -225,15 +225,16 @@ local plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
-  {
-    "mg979/vim-visual-multi",
-    -- keys = {
-    --   { mode = "n", "<leader>mj" },
-    --   { mode = "n", "<leader>mk" },
-    -- },
-    lazy = false,
-    branch = "master",
-  },
+  -- causes issues with enter 
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   -- keys = {
+  --   --   { mode = "n", "<leader>mj" },
+  --   --   { mode = "n", "<leader>mk" },
+  --   -- },
+  --   lazy = false,
+  --   branch = "master",
+  -- },
   {
     "gorbit99/codewindow.nvim",
     keys = {
@@ -602,7 +603,6 @@ local plugins = {
         },
       },
       daily_notes = {
-        folder = "journals",
         date_format = "%d-%m-%Y",
         alias_format = "%d-%m-%Y",
         template = nil,
@@ -790,7 +790,34 @@ local plugins = {
   {
     "goerz/jupytext.vim",
     lazy=false,
+  },
+  -- firenvim, neovim in text fields
+  {
+    'glacambre/firenvim',
+
+    -- Lazy load firenvim
+    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+    lazy = not vim.g.started_by_firenvim,
+    build = function()
+        vim.fn["firenvim#install"](0)
+    end
+},
+  {
+    "leoluz/nvim-dap-go",
+    ft="go",
+    dependencies="mfussenegger/nvim-dap"
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft="go",
+    config = function(_,opts)
+      require("gopher").setup(opts)
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
   }
+  
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
