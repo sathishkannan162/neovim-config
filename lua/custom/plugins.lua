@@ -169,7 +169,7 @@ local plugins = {
           return { "lsp", "indent" }
         end,
         fold_virt_text_handler = handler,
-        close_fold_kinds_for_ft = { default= {"comments", "imports" }},
+        close_fold_kinds_for_ft = { default = { "comments", "imports" } },
         preview = {
           win_config = {
             border = { "", "─", "", "", "", "─", "", "" },
@@ -225,7 +225,7 @@ local plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
-  -- causes issues with enter 
+  -- causes issues with enter
   -- {
   --   "mg979/vim-visual-multi",
   --   -- keys = {
@@ -301,7 +301,7 @@ local plugins = {
       -- fancy UI for the debugger
       {
         "rcarriga/nvim-dap-ui",
-        dependencies ={
+        dependencies = {
           "nvim-neotest/nvim-nio",
         },
       -- stylua: ignore
@@ -792,35 +792,63 @@ local plugins = {
   },
   {
     "goerz/jupytext.vim",
-    lazy=false,
+    lazy = false,
   },
   -- firenvim, neovim in text fields
   {
-    'glacambre/firenvim',
+    "glacambre/firenvim",
 
     -- Lazy load firenvim
     -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
     lazy = not vim.g.started_by_firenvim,
     build = function()
-        vim.fn["firenvim#install"](0)
-    end
-},
+      vim.fn["firenvim#install"](0)
+    end,
+  },
   {
     "leoluz/nvim-dap-go",
-    ft="go",
-    dependencies="mfussenegger/nvim-dap"
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
   },
   {
     "olexsmir/gopher.nvim",
-    ft="go",
-    config = function(_,opts)
+    ft = "go",
+    config = function(_, opts)
       require("gopher").setup(opts)
     end,
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
-  }
-  
+  },
+  {
+    "otavioschwanck/cool-substitute.nvim",
+    keys = { { "gm", mode = "n", desc = "Cool Substitute mark word/ region" }, { "S", mode = "n", desc = "Search whole file" } },
+    config = function(_, opts)
+      require("cool-substitute").setup {
+        setup_keybindings = true,
+        -- mappings = {
+        --   start = 'gm', -- Mark word / region
+        --   start_and_edit = 'gM', -- Mark word / region and also edit
+        --   start_and_edit_word = 'g!M', -- Mark word / region and also edit.  Edit only full word.
+        --   start_word = 'g!m', -- Mark word / region. Edit only full word
+        --   apply_substitute_and_next = 'M', -- Start substitution / Go to next substitution
+        --   apply_substitute_and_prev = '<C-b>', -- same as M but backwards
+        --   apply_substitute_all = 'ga', -- Substitute all
+        --   force_terminate_substitute = 'g!!', -- Terminate macro (if some bug happens)
+        --   terminate_substitute = '<esc>', -- Terminate macro
+        --   skip_substitute = 'n', -- Skip this occurrence
+        --   goto_next = '<C-j>', -- Go to next occurence
+        --   goto_previous = '<C-k>', -- Go to previous occurrence
+        -- },
+        -- reg_char = 'o', -- letter to save macro (Dont use number or uppercase here)
+        -- mark_char = 't', -- mark the position at start of macro
+        -- writing_substitution_color = "#ECBE7B", -- for status line
+        -- applying_substitution_color = "#98be65", -- for status line
+        -- edit_word_when_starting_with_substitute_key = true -- (press M to mark and edit when not executing anything anything)
+      }
+    end,
+  },
+
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
