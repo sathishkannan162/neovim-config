@@ -301,6 +301,9 @@ local plugins = {
       -- fancy UI for the debugger
       {
         "rcarriga/nvim-dap-ui",
+        dependencies ={
+          "nvim-neotest/nvim-nio",
+        },
       -- stylua: ignore
       keys = {
         { "<leader>du", function() require("dapui").toggle({reset=true }) end, desc = "Dap UI" },
