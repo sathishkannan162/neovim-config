@@ -169,7 +169,7 @@ local plugins = {
           return { "lsp", "indent" }
         end,
         fold_virt_text_handler = handler,
-        close_fold_kinds = { "comments", "imports" },
+        close_fold_kinds_for_ft = { default= {"comments", "imports" }},
         preview = {
           win_config = {
             border = { "", "─", "", "", "", "─", "", "" },
