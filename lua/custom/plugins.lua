@@ -226,15 +226,15 @@ local plugins = {
     end,
   },
   -- causes issues with enter
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   -- keys = {
-  --   --   { mode = "n", "<leader>mj" },
-  --   --   { mode = "n", "<leader>mk" },
-  --   -- },
-  --   lazy = false,
-  --   branch = "master",
-  -- },
+  {
+    "mg979/vim-visual-multi",
+    -- keys = {
+    --   { mode = "n", "<leader>mj" },
+    --   { mode = "n", "<leader>mk" },
+    -- },
+    lazy = false,
+    branch = "master",
+  },
   {
     "gorbit99/codewindow.nvim",
     keys = {
