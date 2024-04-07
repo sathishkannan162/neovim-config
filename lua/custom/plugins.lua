@@ -551,7 +551,7 @@ local plugins = {
 
       -- optional
       "nvim-treesitter/nvim-treesitter",
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
@@ -666,7 +666,7 @@ local plugins = {
     cmd = { "TimerStart", "TimerRepeat" },
     dependencies = {
       -- Optional, but highly recommended if you want to use the "Default" timer
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
     opts = {},
   },
