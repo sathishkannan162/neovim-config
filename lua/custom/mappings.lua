@@ -82,6 +82,12 @@ M.leap = {
   },
 }
 
+M.quickfix = {
+  n = {
+    ["<leader>tn"] = { "<cmd>cnext<cr>" },
+    ["<leader>tm"] = { "<cmd>cprevious<cr>" },
+  },
+}
 
 -- M.dap = {
 --   n = {
