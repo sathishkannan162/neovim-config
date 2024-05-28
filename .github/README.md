@@ -1,5 +1,8 @@
 <h1 align="center">NvChad</h1>
 
+<div>The base config is NvChad. I have modified some settings to my liking.</div>
+
+
 <div align="center">
 	<a href="https://nvchad.com/">Home</a>
   <span> • </span>
@@ -23,6 +26,12 @@
 
   </div>
 
+## Installation
+
+```sh
+git clone https://github.com/sathishkannan162/neovim-config ~/.config/nvim && nvim
+```
+
 ## Showcase
 
 <img src="https://nvchad.com/features/nvdash.webp">
@@ -30,6 +39,7 @@
 
 <img src="https://nvchad.com/screenshots/onedark.webp">
 <img src="https://nvchad.com/screenshots/rxyhn1.webp">
+
 
 ## What is it?
 
