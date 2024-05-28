@@ -13,7 +13,8 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "python",
-    "go"
+    "go",
+    "rust"
   },
   autotag = {
     enable = true,
