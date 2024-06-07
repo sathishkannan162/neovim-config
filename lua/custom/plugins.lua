@@ -558,10 +558,10 @@ local plugins = {
       -- configuration goes here
     },
   },
-  {
-    "LintaoAmons/scratch.nvim",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "LintaoAmons/scratch.nvim",
+  --   event = "VeryLazy",
+  -- },
   -- {
   --   "echasnovski/mini.nvim",
   --   event = "VeryLazy",
