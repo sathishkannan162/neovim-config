@@ -20,7 +20,7 @@ local sources = {
     },
   }, -- so prettier works only on these filetypes
   -- b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "typescript", "javascript" } }, -- so prettier works only on these filetypes
-  b.formatting.eslint_d.with {
+  b.formatting.eslint.with {
     filetypes = { "html", "typescript", "javascript", "typescriptreact", "javascriptreact", "json" },
   },
 
@@ -36,14 +36,13 @@ local sources = {
   -- b.diagnostics.mypy,
   b.diagnostics.ruff,
 
-  -- go 
+  -- go
   b.formatting.gofmt,
   -- b.formatting.gofumpt, -- stricter go format
   b.formatting.goimports,
   -- b.formatting.goimports_reviser, -- deterministic ordering of imports
   b.formatting.golines,
   -- shortens long lines of code
-  
 }
 
 local on_attach = function(client, bufnr)

@@ -41,10 +41,14 @@ M.harpoon = {
 
 M.trouble = {
   n = {
-    ["mt"] = { "<cmd> lua require('trouble').toggle() <CR>", "telescope toggle" },
-    ["mw"] = {
-      "<cmd> lua require('trouble').toggle 'workspace_diagnostics' <CR>",
-      "telescope workspace diagnostics",
+    -- ["mt"] = { "<cmd> lua require('trouble').toggle() <CR>", "telescope toggle" },
+    ["mt"] = {
+      "<cmd>Trouble diagnostics toggle<cr>",
+      "Diagnostics (Trouble)",
+    },
+    ["mb"] = {
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      "Buffer diagnostics (Trouble)",
     },
     ["md"] = {
       "<cmd> lua require('trouble').toggle 'document_diagnostics' <CR>",
