@@ -945,7 +945,13 @@ local plugins = {
       }
     end,
   },
-
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy=false
+  },
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
