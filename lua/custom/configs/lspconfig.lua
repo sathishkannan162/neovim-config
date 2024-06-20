@@ -10,7 +10,8 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls" }
+-- local servers = { "html", "cssls", "tsserver", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls" }
+local servers = { "html", "cssls", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls" }
 -- grammarly language server gives too much errors when writing notes.
 
 for _, lsp in ipairs(servers) do
@@ -19,6 +20,16 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- tyescript-tools.nvim
+
+require("typescript-tools").setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  separate_diagnostic_server = true,
+  -- "change"|"insert_leave" determine when the client asks the server about diagnostic
+  publish_diagnostic_on = "insert_leave",
+}
 
 -- can cause conflict with rust tools.
 -- lspconfig.rust_analyzer.setup {

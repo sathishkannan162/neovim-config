@@ -902,7 +902,12 @@ local plugins = {
     "mbbill/undotree",
     lazy = false,
   },
-
+-- improves performance of typescript server
+{
+  "pmizio/typescript-tools.nvim",
+  dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  opts = {},
+}
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
