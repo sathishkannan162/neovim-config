@@ -950,12 +950,25 @@ local plugins = {
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    lazy=false
+    lazy = false,
+  },
+  {
+    "hedyhli/outline.nvim",
+    lazy=true,
+    keys = { { "<leader>o", mode = "n", desc = "Outline open" }  },
+    config = function()
+      -- Example mapping to toggle outline
+      vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+      require("outline").setup {
+        -- Your setup opts here (leave empty to use defaults)
+      }
+    end,
   },
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
-  --   -- lazy=false,
+  -- lazy=false,
   --   dependencies = {
   --     "MunifTanjim/nui.nvim",
   --     "rcarriga/nvim-notify",
