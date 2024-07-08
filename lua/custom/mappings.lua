@@ -126,4 +126,14 @@ M.quickfix = {
 --   -- },
 -- }
 
+M.neotest = {
+  n = {
+    ["<leader>to"] = { "<cmd>lua require('neotest').run.run()<cr>", "Run nearest run." },
+    ["<leader>ti"] = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run current file." },
+    ["<leader>te"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug nearest test" },
+    ["<leader>ts"] = { "<cmd>lua require('neotest').run.stop()<cr>", "Test Stop" },
+    ["<leader>ta"] = { "<cmd>lua require('neotest').run.attach()<cr>", "Test attach" },
+  },
+}
+
 return M

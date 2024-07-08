@@ -954,8 +954,8 @@ local plugins = {
   },
   {
     "hedyhli/outline.nvim",
-    lazy=true,
-    keys = { { "<leader>o", mode = "n", desc = "Outline open" }  },
+    lazy = true,
+    keys = { { "<leader>o", mode = "n", desc = "Outline open" } },
     config = function()
       -- Example mapping to toggle outline
       vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
@@ -965,6 +965,32 @@ local plugins = {
       }
     end,
   },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-jest",
+    },
+    ft = { "typescriptreact", "typescript", "javascriptreact", "javascript", "html", "css" },
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-jest" {
+            jestCommand = "npm test --",
+            jestConfigFile = "custom.jest.config.ts",
+            env = { CI = true },
+            cwd = function(path)
+              return vim.fn.getcwd()
+            end,
+          },
+        },
+      }
+    end,
+  },
+
   -- {
   --   "folke/noice.nvim",
   --   event = "VeryLazy",
