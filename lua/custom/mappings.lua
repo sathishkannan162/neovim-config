@@ -135,5 +135,10 @@ M.neotest = {
     ["<leader>ta"] = { "<cmd>lua require('neotest').run.attach()<cr>", "Test attach" },
   },
 }
+M.oil = {
+  n = {
+    ["<leader>E"] = { "<cmd>Oil<cr>", "Open Oil file editor" },
+  },
+}
 
 return M
