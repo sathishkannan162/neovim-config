@@ -1000,6 +1000,13 @@ local plugins = {
       require("oil").setup()
     end,
   },
+  {
+    "supermaven-inc/supermaven-nvim",
+    event='VeryLazy',
+    config = function()
+      require("supermaven-nvim").setup {}
+    end,
+  },
   -- {
   --   "neoclide/coc.nvim",
   --   opts = {},
