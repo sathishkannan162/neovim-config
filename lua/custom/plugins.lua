@@ -1008,6 +1008,10 @@ local plugins = {
     end,
   },
   -- {
+  --   "luk400/vim-jukit",
+  --   lazy = false,
+  -- },
+  -- {
   --   "neoclide/coc.nvim",
   --   opts = {},
   --   -- ft = { "typescript", "javascript" },
