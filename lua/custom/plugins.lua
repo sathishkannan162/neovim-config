@@ -1186,7 +1186,20 @@ local plugins = {
       return require("custom.utils").isApiDir()
     end,
     config = function()
-      require('custom.other.plugins.coc').loadCoc();
+      require("custom.other.plugins.coc").loadCoc()
+    end,
+  },
+  {
+    "fannheyward/telescope-coc.nvim",
+    cond = function()
+      return require("custom.utils").isApiDir()
+    end,
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("telescope").load_extension "coc"
     end,
   },
 

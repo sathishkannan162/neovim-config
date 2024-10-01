@@ -78,7 +78,7 @@ M.loadCoc = function()
       })
 
       -- Symbol renaming
-      keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
+      keyset("n", "<leader>ra", "<Plug>(coc-rename)", { silent = true })
 
       -- Formatting selected code
       keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })

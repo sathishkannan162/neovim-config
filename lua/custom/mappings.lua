@@ -32,10 +32,7 @@ M.nvimtree = {
 -- }
 
 M.telescope = {
-  n = {
-    ["gt"] = { "<cmd> lua require('telescope.builtin').lsp_type_definitions() <CR>", "lsp references" },
-    ["go"] = { "<cmd> lua require('telescope.builtin').lsp_document_symbols() <CR>", "lsp references" },
-  },
+  n = {},
 }
 
 -- Get the current directory
@@ -45,6 +42,13 @@ local cwd = vim.fn.getcwd()
 if not string.match(cwd, "/Users/sathish/exemplary/api") then
   M.telescope.n["gd"] = { "<cmd> lua require('telescope.builtin').lsp_definitions() <CR>", "lsp definitions" }
   M.telescope.n["gr"] = { "<cmd> lua require('telescope.builtin').lsp_references() <CR>", "lsp references" }
+  M.telescope.n["gt"] = { "<cmd> lua require('telescope.builtin').lsp_type_definitions() <CR>", "lsp type definitions" }
+  M.telescope.n["go"] = { "<cmd> lua require('telescope.builtin').lsp_document_symbols() <CR>", "lsp document symbols" }
+else
+  M.telescope.n["gd"] = { "<cmd> Telescope coc definitions <CR>", "coc definitions" }
+  M.telescope.n["gr"] = { "<cmd> Telescope coc references <CR>", "coc references" }
+  M.telescope.n["gt"] = { "<cmd> Telescope coc type_definitions <CR>", "coc type definitions" }
+  M.telescope.n["go"] = { "<cmd> Telescope coc document_symbols <CR>", "coc document_symbols" }
 end
 
 M.harpoon = {
