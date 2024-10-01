@@ -22,14 +22,30 @@ M.nvimtree = {
 }
 
 -- more keybinds!
+-- M.telescope = {
+--   n = {
+--     ["<leader>fr"] = { "<cmd> lua require('telescope.builtin').lsp_references() <CR>", "lsp references" },
+--     ["gd"] = { "<cmd> lua require('telescope.builtin').lsp_definitions() <CR>", "lsp references" },
+--     ["gt"] = { "<cmd> lua require('telescope.builtin').lsp_type_definitions() <CR>", "lsp references" },
+--     ["go"] = { "<cmd> lua require('telescope.builtin').lsp_document_symbols() <CR>", "lsp references" },
+--   },
+-- }
+
 M.telescope = {
   n = {
-    ["<leader>fr"] = { "<cmd> lua require('telescope.builtin').lsp_references() <CR>", "lsp references" },
-    ["gd"] = { "<cmd> lua require('telescope.builtin').lsp_definitions() <CR>", "lsp references" },
     ["gt"] = { "<cmd> lua require('telescope.builtin').lsp_type_definitions() <CR>", "lsp references" },
     ["go"] = { "<cmd> lua require('telescope.builtin').lsp_document_symbols() <CR>", "lsp references" },
   },
 }
+
+-- Get the current directory
+local cwd = vim.fn.getcwd()
+
+-- Set gd keymap only if not in the /api directory
+if not string.match(cwd, "/Users/sathish/exemplary/api") then
+  M.telescope.n["gd"] = { "<cmd> lua require('telescope.builtin').lsp_definitions() <CR>", "lsp definitions" }
+  M.telescope.n["gr"] = { "<cmd> lua require('telescope.builtin').lsp_references() <CR>", "lsp references" }
+end
 
 M.harpoon = {
   n = {
