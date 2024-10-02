@@ -49,3 +49,7 @@ vim.g.vscode_snippets_path = "~/Library/Application Support/Code/User/snippets"
 
 -- set conceal level to 2 to support markdown rendering for bullet points and checkboxes, with obsidian.nvim plugin.
 vim.o.conceallevel=2
+
+
+-- autosession
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
