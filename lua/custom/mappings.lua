@@ -14,6 +14,11 @@ M.general = {
   },
 }
 
+if require("custom.utils").isApiDir() then
+  M.general.n["<leader>fm"] = { "<cmd> CocCommand prettier.formatFile <CR>", "" }
+  M.general.n["<leader>fa"] = { "<cmd> CocCommand eslint.executeAutofix <CR>", "" }
+end
+
 M.nvimtree = {
   n = {
     ["<c-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
