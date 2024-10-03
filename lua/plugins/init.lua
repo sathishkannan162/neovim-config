@@ -242,13 +242,17 @@ local default_plugins = {
       local telescope = require "telescope"
       local actions = require "telescope.actions"
       local open_with_trouble = require("trouble.sources.telescope").open
-      
+
       local add_to_trouble = require("trouble.sources.telescope").add
+      local send_to_telescope_again = require("custom.other.own-plugins.telescope-again").send_to_telescope_again
       opts.defaults.mappings.n["<c-t>"] = open_with_trouble
-      opts.defaults.mappings.n["<c-s>"] = add_to_trouble  
+      opts.defaults.mappings.n["<c-s>"] = add_to_trouble
+      opts.defaults.mappings.n["<c-r>"] = send_to_telescope_again
       opts.defaults.mappings.i = opts.defaults.mappings.i or {}
       opts.defaults.mappings.i["<c-t>"] = open_with_trouble
-      opts.defaults.mappings.i["<c-s>"] = add_to_trouble  
+      opts.defaults.mappings.i["<c-s>"] = add_to_trouble
+      opts.defaults.mappings.i["<c-r>"] = send_to_telescope_again
+
       telescope.setup(opts)
 
       -- load extensions
