@@ -107,7 +107,7 @@ M.loadCoc = function()
       -- keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 
       -- Remap keys for apply code actions at the cursor position.
-      keyset("n", "<leader>ca", "<Plug>(coc-codeaction-cursor)", opts)
+      keyset("n", "<leader>co", "<Plug>(coc-codeaction-cursor)", opts)
       -- Remap keys for apply source code actions for current file.
       keyset("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
       -- Apply the most preferred quickfix action on the current line.

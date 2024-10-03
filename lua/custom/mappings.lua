@@ -94,6 +94,11 @@ M.trouble = {
   },
 }
 
+if string.match(cwd, "/Users/sathish/exemplary/api") then
+  -- presss <c-t> after coc diagnostics is opened
+  M.trouble.n["mt"] = { "<cmd>Telescope coc diagnostics<cr>  ", "telescope coc diagnostics" }
+end
+
 M["vim-visual-multi"] = {
   n = {
     ["<leader>mk"] = { "<Plug>(VM-Add-Cursor-Up)" },
