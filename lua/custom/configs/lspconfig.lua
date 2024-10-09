@@ -11,7 +11,7 @@ local util = require "lspconfig.util"
 
 -- if you just want default config for the servers then put them in a table
 -- local servers = { "html", "cssls", "tsserver", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls" }
-local servers = { "html", "cssls", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls" }
+local servers = { "html", "cssls", "clangd", "eslint", "astro", "bashls", "pyright", "marksman", "gopls"  }
 -- grammarly language server gives too much errors when writing notes.
 
 for _, lsp in ipairs(servers) do
@@ -29,6 +29,10 @@ require("typescript-tools").setup {
   separate_diagnostic_server = true,
   -- "change"|"insert_leave" determine when the client asks the server about diagnostic
   publish_diagnostic_on = "insert_leave",
+}
+
+lspconfig.docker_compose_language_service.setup {
+  filetypes= {"yaml", "yaml.docker-compose"}
 }
 
 -- can cause conflict with rust tools.
