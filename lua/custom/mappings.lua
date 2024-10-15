@@ -8,6 +8,10 @@ M.general = {
   },
   v = {
     [">"] = { ">gv", "indent" },
+    ["op"] = {
+      ':lua require("custom.lua-functions.utils").replace_selection_with_random_id() <CR>',
+      "Replace selection with random js",
+    },
   },
   c = {
     ["jk"] = { "<ESC>", "Exit command mode to normal mode" },

@@ -967,7 +967,7 @@ local plugins = {
   {
     "hedyhli/outline.nvim",
     lazy = true,
-    keys = { { "<leader>o", mode = "n", desc = "Outline open" } },
+    keys = { { "<leader>op", mode = "n", desc = "Outline open" } },
     config = function()
       -- Example mapping to toggle outline
       vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
