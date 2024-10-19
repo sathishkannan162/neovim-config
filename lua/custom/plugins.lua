@@ -549,7 +549,7 @@ local plugins = {
       local dbg_path = require("mason-registry").get_package("js-debug-adapter"):get_install_path()
       require("dap-vscode-js").setup {
         debugger_path = dbg_path,
-        adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+        adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost", "node2",  },
       }
     end,
   },
