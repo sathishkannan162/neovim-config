@@ -357,6 +357,13 @@ M.nvterm = {
       end,
       "New vertical term",
     },
+
+    ["<leader>lg"] = {
+      function()
+        require("nvterm.terminal").send("lazygit", "horizontal")
+      end,
+      "Lazygit",
+    },
   },
 }
 
