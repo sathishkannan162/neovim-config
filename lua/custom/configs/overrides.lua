@@ -14,7 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "python",
     "go",
-    "rust"
+    "rust",
   },
   -- autotag = {
   --   enable = true,
@@ -67,14 +67,17 @@ M.mason = {
     -- markdown
     "marksman",
 
-    -- go 
+    -- go
     "gopls",
-    "delve" -- debgger
+    "delve", -- debgger
   },
 }
 
 -- git support in nvimtree
 M.nvimtree = {
+  filters = {
+    dotfiles = false,
+  },
   git = {
     enable = true,
   },
