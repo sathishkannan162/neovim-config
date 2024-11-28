@@ -24,6 +24,21 @@ local sources = {
     filetypes = { "html", "typescript", "javascript", "typescriptreact", "javascriptreact", "json" },
   },
 
+  b.formatting.rome.with {
+    command = "biome",
+    filetypes = {
+      "html",
+      -- "markdown",
+      "css",
+      "typescript",
+      "javascript",
+      "typescriptreact",
+      "javascriptreact",
+      "astro",
+      "json",
+    },
+  },
+
   -- Lua
   b.formatting.stylua,
 

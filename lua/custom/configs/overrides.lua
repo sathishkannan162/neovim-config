@@ -46,6 +46,7 @@ M.mason = {
     -- "deno" -- not reading local prettier config,
     "prettier",
     "prettierd",
+    "biome",
 
     -- rust
     "rust-analyzer",
