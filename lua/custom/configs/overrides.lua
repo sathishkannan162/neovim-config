@@ -79,7 +79,7 @@ M.nvimtree = {
     dotfiles = false,
   },
   git = {
-    enable = true,
+    enable = false,
   },
 
   renderer = {
